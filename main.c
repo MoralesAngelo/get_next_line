@@ -6,11 +6,11 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:42:03 by mac               #+#    #+#             */
-/*   Updated: 2024/11/21 15:43:10 by mac              ###   ########.fr       */
+/*   Updated: 2024/11/22 16:15:34 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line.bonus.h"
 #include <fcntl.h> // - para usar el open 
 #include <stdio.h>
 
@@ -18,7 +18,7 @@ int	main(void)
 {
 	char	*line;
 
-	int fd = open("archivo_de_prueba.txt", O_RDONLY);
+	int fd = open("texto.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		perror("Error abriendo archivo");

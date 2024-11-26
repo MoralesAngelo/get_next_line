@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line.bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:43:36 by mac               #+#    #+#             */
-/*   Updated: 2024/11/22 16:23:14 by mac              ###   ########.fr       */
+/*   Updated: 2024/11/22 16:15:58 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line.bonus.h"
 #include <fcntl.h>
 #include <stdio.h>
 
@@ -92,19 +92,19 @@ static char	*ft_read_to_buffer(int fd, char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = ft_read_to_buffer(fd, buffer);
-	if (!buffer || *buffer == '\0')
+	buffer[fd] = ft_read_to_buffer(fd, buffer[fd]);
+	if (!buffer[fd] || *buffer[fd] == '\0')
 	{
-		free(buffer);
-		buffer = NULL;
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 		return (NULL);
 	}
-	line = ft_extract_line(buffer);
-	buffer = ft_trim_buffer(buffer);
+	line = ft_extract_line(buffer[fd]);
+	buffer[fd] = ft_trim_buffer(buffer[fd]);
 	return (line);
 }
