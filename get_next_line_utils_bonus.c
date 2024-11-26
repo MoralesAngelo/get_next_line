@@ -6,11 +6,11 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:58:39 by mac               #+#    #+#             */
-/*   Updated: 2024/11/22 16:16:04 by mac              ###   ########.fr       */
+/*   Updated: 2024/11/26 17:11:43 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.bonus.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(const char *str)
 {

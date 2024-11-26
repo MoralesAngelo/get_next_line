@@ -6,11 +6,11 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:42:03 by mac               #+#    #+#             */
-/*   Updated: 2024/11/22 16:15:34 by mac              ###   ########.fr       */
+/*   Updated: 2024/11/26 17:18:10 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.bonus.h"
+#include "get_next_line.h"
 #include <fcntl.h> // - para usar el open 
 #include <stdio.h>
 
